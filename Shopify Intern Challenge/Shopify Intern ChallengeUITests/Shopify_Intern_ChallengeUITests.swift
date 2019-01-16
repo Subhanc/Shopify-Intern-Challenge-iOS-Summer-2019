@@ -2,7 +2,7 @@
 //  Shopify_Intern_ChallengeUITests.swift
 //  Shopify Intern ChallengeUITests
 //
-//  Created by Subhan Chaudhry on 2019-01-13.
+//  Created by Subhan Chaudhry on 2019-01-16.
 //  Copyright © 2019 Subhan Chaudhry. All rights reserved.
 //
 
