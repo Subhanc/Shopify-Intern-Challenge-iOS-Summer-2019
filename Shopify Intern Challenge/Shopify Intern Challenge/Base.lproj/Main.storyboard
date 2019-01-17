@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ie-bO-nzP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Shopify Store-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopify_Intern_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,34 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uy1-0N-bf6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uy1-0N-bf6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hF4-8S-yfS">
-                                    <size key="itemSize" width="84" height="90"/>
+                                    <size key="itemSize" width="136" height="147"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6er-E3-nFZ" customClass="CollectionViewCell" customModule="Shopify_Intern_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="84" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="136" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-jt-tDp">
-                                                    <rect key="frame" x="20" y="35" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xof-rl-0vP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="110"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-jt-tDp">
+                                                    <rect key="frame" x="47" y="117" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="5wF-jt-tDp" secondAttribute="bottom" constant="1" id="8Tq-0C-dME"/>
+                                            <constraint firstItem="5wF-jt-tDp" firstAttribute="centerX" secondItem="6er-E3-nFZ" secondAttribute="centerX" id="HIB-Xc-gaV"/>
+                                            <constraint firstItem="xof-rl-0vP" firstAttribute="leading" secondItem="6er-E3-nFZ" secondAttribute="leading" id="Zbn-un-XpR"/>
+                                            <constraint firstItem="xof-rl-0vP" firstAttribute="top" secondItem="6er-E3-nFZ" secondAttribute="top" id="edM-cv-L0g"/>
+                                            <constraint firstAttribute="trailing" secondItem="xof-rl-0vP" secondAttribute="trailing" id="tRs-HP-sTa"/>
+                                            <constraint firstItem="xof-rl-0vP" firstAttribute="width" secondItem="6er-E3-nFZ" secondAttribute="height" multiplier="1:1" id="tW9-H7-kVR"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="myImageView" destination="xof-rl-0vP" id="0wC-DG-jKp"/>
                                             <outlet property="myLabel" destination="5wF-jt-tDp" id="2gH-OG-EeJ"/>
                                         </connections>
                                     </collectionViewCell>
@@ -57,10 +67,35 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uy1-0N-bf6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AuY-uT-yiN"/>
+                            <constraint firstItem="uy1-0N-bf6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="G7V-sh-u7I"/>
+                            <constraint firstItem="uy1-0N-bf6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j8u-8Q-Z4u"/>
+                            <constraint firstItem="uy1-0N-bf6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yup-3k-WKe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Shopify Store" id="enG-7Z-wnX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jFU-hN-6ee">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ie-bO-nzP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ipl-kC-Nzp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tqF-Xf-8QS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGL-ws-3fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>

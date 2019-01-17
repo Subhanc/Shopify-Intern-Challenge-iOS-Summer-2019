@@ -15,6 +15,7 @@
 		0D8D750421EFD41000A35EAF /* Shopify_Intern_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D750321EFD41000A35EAF /* Shopify_Intern_ChallengeTests.swift */; };
 		0D8D750F21EFD41000A35EAF /* Shopify_Intern_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D750E21EFD41000A35EAF /* Shopify_Intern_ChallengeUITests.swift */; };
 		0D8D751D21EFD46700A35EAF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D751C21EFD46700A35EAF /* CollectionViewCell.swift */; };
+		0DA8DDF421F04B83006030A2 /* ShopifyCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8DDF321F04B83006030A2 /* ShopifyCollect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0D8D750E21EFD41000A35EAF /* Shopify_Intern_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify_Intern_ChallengeUITests.swift; sourceTree = "<group>"; };
 		0D8D751021EFD41000A35EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8D751C21EFD46700A35EAF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0DA8DDF321F04B83006030A2 /* ShopifyCollect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyCollect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				0D8D74EE21EFD40F00A35EAF /* AppDelegate.swift */,
 				0D8D74F021EFD40F00A35EAF /* ViewController.swift */,
+				0DA8DDF321F04B83006030A2 /* ShopifyCollect.swift */,
 				0D8D74F221EFD40F00A35EAF /* Main.storyboard */,
 				0D8D751C21EFD46700A35EAF /* CollectionViewCell.swift */,
 				0D8D74F521EFD41000A35EAF /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 				0D8D74F121EFD40F00A35EAF /* ViewController.swift in Sources */,
 				0D8D74EF21EFD40F00A35EAF /* AppDelegate.swift in Sources */,
 				0D8D751D21EFD46700A35EAF /* CollectionViewCell.swift in Sources */,
+				0DA8DDF421F04B83006030A2 /* ShopifyCollect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
