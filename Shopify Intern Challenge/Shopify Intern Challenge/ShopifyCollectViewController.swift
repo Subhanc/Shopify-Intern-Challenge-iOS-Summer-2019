@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ShopifyCollectViewController.swift
 //  Shopify Intern Challenge
 //
 //  Created by Subhan Chaudhry on 2019-01-16.
@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     var items = [ShopifyCollect]()
     @IBOutlet var myCollectionView: UICollectionView!
+    var currentID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 self.items = myCollection
                 self.myCollectionView.reloadData()
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "productSeque" {
+            let destinationController = segue.destination as! ShopifyProductsViewController
+            destinationController.myID = currentID
         }
     }
 
@@ -38,6 +46,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.myLabel.text = items[indexPath.item].title
         cell.myImageView.image = items[indexPath.item].image
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.currentID = items[indexPath.item].id!
     }
     
     // MARK: HTTP Helper Functions
