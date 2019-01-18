@@ -10,10 +10,12 @@ import UIKit
 
 class ShopifyCollect {
     
+    var id: Int?
     var title: String?
     var image: UIImage?
     
-    init(myTitle: String, myImage: UIImage) {
+    init(myId: Int, myTitle: String, myImage: UIImage) {
+        id = myId
         title = myTitle
         image = myImage
     }

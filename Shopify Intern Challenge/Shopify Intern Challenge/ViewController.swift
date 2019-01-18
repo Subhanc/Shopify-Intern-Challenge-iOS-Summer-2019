@@ -7,31 +7,23 @@
 //
 
 import UIKit
-
-let temp: String = "http://www.petsworld.in/blog/wp-content/uploads/2014/09/cat.jpg"
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     var items = [ShopifyCollect]()
+    @IBOutlet var myCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let item1 = ShopifyCollect(myTitle: "Hello World", myImage: downloadImage(urlString: temp))
-        items.append(item1)
-        items.append(item1)
-        items.append(item1)
-        items.append(item1)
-        items.append(item1)
-    }
-    
-    func downloadImage(urlString: String) -> UIImage  {
-        let url = URL(string: urlString)
-        let imageData = try? Data(contentsOf: url!)
-        if imageData != nil {
-            return UIImage(data: imageData!)!
-        } else {
-            return UIImage()
+        // non multithreaded: self.items = getCollectionData()
+        getCollectionData { result in
+            if let myCollection = result.value {
+                self.items = myCollection
+                self.myCollectionView.reloadData()
+            }
         }
     }
 
@@ -46,6 +38,54 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.myLabel.text = items[indexPath.item].title
         cell.myImageView.image = items[indexPath.item].image
         return cell
+    }
+    
+    // MARK: HTTP Helper Functions
+
+    let ACCESS_TOKEN = "c32313df0d0ef512ca64d5b336a0d7c6"
+    let COLLECTIONS_URL = "https://shopicruit.myshopify.com/admin/custom_collections.json?"
+    
+    // Shopify API Call helper func
+    func getCollectionData(completion: @escaping (Result<[ShopifyCollect]>) -> Void) {
+        let shopifyParameters = [
+            "access_token" : ACCESS_TOKEN
+        ]
+        
+        Alamofire.request(COLLECTIONS_URL, parameters: shopifyParameters).responseJSON { response in
+            if let value = response.result.value {
+                var shopifyCollections = [ShopifyCollect]()
+                
+                let jsonValue = JSON(value)
+                let customCollectionsJSON = jsonValue["custom_collections"]
+                
+                for (_, collection) : (String, JSON) in customCollectionsJSON {
+                    let id = collection["id"].intValue
+                    let title = collection["title"].stringValue
+                    let imageURL = collection["image"]["src"].stringValue
+                    
+                    let image = self.downloadImage(urlString: imageURL)
+                    
+                    let shopifyCollect = ShopifyCollect(myId: id, myTitle: title, myImage: image)
+                    shopifyCollections.append(shopifyCollect)
+                }
+                // return shopifyCollections if not multithreaded with closures
+                DispatchQueue.main.async {
+                    completion(Result.success(shopifyCollections))
+                }
+            }
+        }
+    }
+    
+    
+    // Download images helper func
+    func downloadImage(urlString: String) -> UIImage  {
+        let url = URL(string: urlString)
+        let imageData = try? Data(contentsOf: url!)
+        if imageData != nil {
+            return UIImage(data: imageData!)!
+        } else {
+            return UIImage()
+        }
     }
 }
 

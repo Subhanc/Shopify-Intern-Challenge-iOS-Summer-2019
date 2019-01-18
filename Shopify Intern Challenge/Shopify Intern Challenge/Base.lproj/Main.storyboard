@@ -22,37 +22,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hF4-8S-yfS">
-                                    <size key="itemSize" width="136" height="147"/>
+                                    <size key="itemSize" width="120" height="149"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6er-E3-nFZ" customClass="CollectionViewCell" customModule="Shopify_Intern_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="147"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="149"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="136" height="147"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xof-rl-0vP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="110"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xof-rl-0vP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xof-rl-0vP" secondAttribute="height" multiplier="1:1" id="qsS-gJ-6Ve"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-jt-tDp">
-                                                    <rect key="frame" x="47" y="117" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-jt-tDp">
+                                                    <rect key="frame" x="42.5" y="124" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="5wF-jt-tDp" secondAttribute="bottom" constant="1" id="8Tq-0C-dME"/>
-                                            <constraint firstItem="5wF-jt-tDp" firstAttribute="centerX" secondItem="6er-E3-nFZ" secondAttribute="centerX" id="HIB-Xc-gaV"/>
-                                            <constraint firstItem="xof-rl-0vP" firstAttribute="leading" secondItem="6er-E3-nFZ" secondAttribute="leading" id="Zbn-un-XpR"/>
-                                            <constraint firstItem="xof-rl-0vP" firstAttribute="top" secondItem="6er-E3-nFZ" secondAttribute="top" id="edM-cv-L0g"/>
-                                            <constraint firstAttribute="trailing" secondItem="xof-rl-0vP" secondAttribute="trailing" id="tRs-HP-sTa"/>
-                                            <constraint firstItem="xof-rl-0vP" firstAttribute="width" secondItem="6er-E3-nFZ" secondAttribute="height" multiplier="1:1" id="tW9-H7-kVR"/>
+                                            <constraint firstItem="xof-rl-0vP" firstAttribute="leading" secondItem="6er-E3-nFZ" secondAttribute="leading" id="9Eu-ZK-6cs"/>
+                                            <constraint firstAttribute="bottom" secondItem="5wF-jt-tDp" secondAttribute="bottom" constant="8" id="EKT-Uz-2JG"/>
+                                            <constraint firstItem="xof-rl-0vP" firstAttribute="top" secondItem="6er-E3-nFZ" secondAttribute="top" id="Wt4-Q6-aZE"/>
+                                            <constraint firstAttribute="trailing" secondItem="xof-rl-0vP" secondAttribute="trailing" id="kg5-wy-GOy"/>
+                                            <constraint firstItem="5wF-jt-tDp" firstAttribute="centerX" secondItem="6er-E3-nFZ" secondAttribute="centerX" id="ygh-lC-QFL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="myImageView" destination="xof-rl-0vP" id="0wC-DG-jKp"/>
@@ -76,6 +78,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shopify Store" id="enG-7Z-wnX"/>
+                    <connections>
+                        <outlet property="myCollectionView" destination="uy1-0N-bf6" id="RhP-qL-xP8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
