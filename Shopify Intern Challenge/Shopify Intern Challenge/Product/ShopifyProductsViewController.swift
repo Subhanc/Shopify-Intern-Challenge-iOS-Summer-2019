@@ -20,6 +20,12 @@ class ShopifyProductsViewController: UIViewController, UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //myTableView.separatorInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        //smyTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        myTableView.separatorStyle = .none
+        myTableView.separatorColor = .black
+        
         getProductsHolder(id: myID) { result in
             if let myValue = result.value {
                 self.getProductData(allId: myValue) { newResult in
@@ -47,7 +53,7 @@ class ShopifyProductsViewController: UIViewController, UITableViewDelegate, UITa
         cell.myTitleLabel.text = items[indexPath.item].title
         cell.myCollectionLabel.text = items[indexPath.item].collection
         cell.myImageView.image = items[indexPath.item].image
-        cell.myInventoryLabel.text = String(items[indexPath.item].inventory!)
+        cell.myInventoryLabel.text = "Amount: " + String(items[indexPath.item].inventory!) 
         return cell
     }
     

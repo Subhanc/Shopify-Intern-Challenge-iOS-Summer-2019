@@ -19,7 +19,10 @@ class ProductsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 0.2
+        //self.layer.cornerRadius = 10
+        self.separatorInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

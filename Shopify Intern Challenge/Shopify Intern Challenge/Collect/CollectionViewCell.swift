@@ -13,4 +13,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var myLabel: UILabel!
+    
+    override func awakeFromNib() {
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 0.2
+        self.layer.cornerRadius = 10
+    }
 }
