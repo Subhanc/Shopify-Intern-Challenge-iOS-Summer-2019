@@ -124,17 +124,13 @@
 		0D8D74ED21EFD40F00A35EAF /* Shopify Intern Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				0D8D74EE21EFD40F00A35EAF /* AppDelegate.swift */,
-				0D8D74F021EFD40F00A35EAF /* ShopifyCollectViewController.swift */,
-				0DA8DDF321F04B83006030A2 /* ShopifyCollect.swift */,
-				0D8D74F221EFD40F00A35EAF /* Main.storyboard */,
-				0D8D751C21EFD46700A35EAF /* CollectionViewCell.swift */,
 				0D8D74F521EFD41000A35EAF /* Assets.xcassets */,
 				0D8D74F721EFD41000A35EAF /* LaunchScreen.storyboard */,
+				0D8D74EE21EFD40F00A35EAF /* AppDelegate.swift */,
 				0D8D74FA21EFD41000A35EAF /* Info.plist */,
-				0DA8DDF521F1D0DE006030A2 /* ProductsTableViewCell.swift */,
-				0DA8DDF721F1D213006030A2 /* ShopifyProductsViewController.swift */,
-				0DA8DDF921F1D226006030A2 /* ShopifyProduct.swift */,
+				0D8D74F221EFD40F00A35EAF /* Main.storyboard */,
+				0DA8DDFC21F5AA14006030A2 /* Product */,
+				0DA8DDFB21F5A9D2006030A2 /* Collect */,
 			);
 			path = "Shopify Intern Challenge";
 			sourceTree = "<group>";
@@ -155,6 +151,26 @@
 				0D8D751021EFD41000A35EAF /* Info.plist */,
 			);
 			path = "Shopify Intern ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		0DA8DDFB21F5A9D2006030A2 /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				0D8D751C21EFD46700A35EAF /* CollectionViewCell.swift */,
+				0DA8DDF321F04B83006030A2 /* ShopifyCollect.swift */,
+				0D8D74F021EFD40F00A35EAF /* ShopifyCollectViewController.swift */,
+			);
+			path = Collect;
+			sourceTree = "<group>";
+		};
+		0DA8DDFC21F5AA14006030A2 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8DDF521F1D0DE006030A2 /* ProductsTableViewCell.swift */,
+				0DA8DDF921F1D226006030A2 /* ShopifyProduct.swift */,
+				0DA8DDF721F1D213006030A2 /* ShopifyProductsViewController.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		33DED4FE45CC1FB150292490 /* Pods */ = {

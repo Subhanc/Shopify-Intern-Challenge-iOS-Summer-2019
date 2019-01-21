@@ -34,6 +34,10 @@ class ShopifyProductsViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     // MARK: UITableView funcs
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -54,10 +58,12 @@ class ShopifyProductsViewController: UIViewController, UITableViewDelegate, UITa
     let PRODUCT_URL = "https://shopicruit.myshopify.com/admin/products.json"
     
     func getProductsHolder(id: Int, completion: @escaping (Result<String>) -> Void) {
-        let myParameters = [
+        let myParameters: [String : Any] = [
             "access_token" : ACCESS_TOKEN,
             "collection_id": id
-            ] as [String : Any]
+        ]
+        
+        print(id)
         
         Alamofire.request(PRODUCT_HOLDER_URL, parameters: myParameters).responseJSON { response in
             if let myValue = response.result.value {

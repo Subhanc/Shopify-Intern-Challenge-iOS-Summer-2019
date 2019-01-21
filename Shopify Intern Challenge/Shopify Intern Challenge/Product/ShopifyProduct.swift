@@ -15,6 +15,7 @@ class ShopifyProduct {
     var image: UIImage?
     var inventory: Int?
     
+    
     init(myId: Int, myTitle: String, myCollection: String, myImage: UIImage, myInventory: Int?) {
         id = myId
         title = myTitle

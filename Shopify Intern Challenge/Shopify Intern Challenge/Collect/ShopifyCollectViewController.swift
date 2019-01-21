@@ -10,16 +10,18 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var items = [ShopifyCollect]()
     @IBOutlet var myCollectionView: UICollectionView!
-    var currentID = 0
+    
+    let sectionInset = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // non multithreaded: self.items = getCollectionData()
+       
         getCollectionData { result in
             if let myCollection = result.value {
                 self.items = myCollection
@@ -29,12 +31,23 @@ class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "productSeque" {
+        if segue.identifier == "productSegue" {
             let destinationController = segue.destination as! ShopifyProductsViewController
-            destinationController.myID = currentID
+            if let cell = sender as? CollectionViewCell {
+                if let indexPath = myCollectionView.indexPath(for: cell) {
+                    destinationController.myID = items[indexPath.item].id!
+                }
+            }
         }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInset
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInset.left
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
@@ -46,10 +59,6 @@ class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, 
         cell.myLabel.text = items[indexPath.item].title
         cell.myImageView.image = items[indexPath.item].image
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.currentID = items[indexPath.item].id!
     }
     
     // MARK: HTTP Helper Functions
@@ -72,7 +81,7 @@ class ShopifyCollectViewController: UIViewController, UICollectionViewDelegate, 
                 
                 for (_, collection) : (String, JSON) in customCollectionsJSON {
                     let id = collection["id"].intValue
-                    let title = collection["title"].stringValue
+                    let title = collection["title"].stringValue.components(separatedBy: " ")[0]
                     let imageURL = collection["image"]["src"].stringValue
                     
                     let image = self.downloadImage(urlString: imageURL)
