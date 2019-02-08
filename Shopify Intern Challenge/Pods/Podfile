@@ -1,0 +1,44 @@
+project 'Pods.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Alamofire' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Alamofire
+
+end
+
+target 'Pods-Shopify Intern Challenge' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-Shopify Intern Challenge
+
+end
+
+target 'Pods-Shopify Intern ChallengeTests' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Pods-Shopify Intern ChallengeTests
+
+end
+
+target 'Pods-Shopify Intern ChallengeUITests' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Pods-Shopify Intern ChallengeUITests
+
+end
+
+target 'SwiftyJSON' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SwiftyJSON
+
+end
