@@ -1,5 +1,5 @@
 # Shopify-Intern-Challenge-iOS-Summer-2019
-SiOS Intern Challenge @ Shopify 2019 Submission
+iOS Intern Challenge @ Shopify 2019 Submission
 
 
 <p float="left" align="center">
